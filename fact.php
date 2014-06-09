@@ -1,7 +1,7 @@
 <?php
-$cache_file = 'assets/files/cache.txt';
-$facts_file = 'assets/files/facts.txt';
-$old_facts_file = 'assets/files/oldfacts.txt';
+$cache_file = 'files/cache.txt';
+$facts_file = 'files/facts.txt';
+$old_facts_file = 'files/oldfacts.txt';
 
 function read_and_delete_first_line($filename) {
     $file = file($filename);

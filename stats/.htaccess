@@ -1,6 +1,0 @@
-AuthType Basic
-AuthName " Statistics"
-AuthName "catalyst4success.org Statistics"
-AuthUserFile /var/chroot/home/content/76/10198376/html/stats/.statspwd
-Require valid-user
-DirectoryIndex index.html

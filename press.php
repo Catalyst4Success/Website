@@ -1,51 +1,96 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-	<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-			<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-				<?php include("includes/header.php"); ?>
-				<!--[if lt IE 7]>
-				<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-				<![endif]-->
-	<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=114615118645359";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+<!-- saved from url=(0030)http://bootswatch.com/default/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Catalyst 4 Success</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="custom/custom-bootstrap.css" media="screen">
+<link rel="stylesheet" href="files/styles.css" media="screen">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+   <?php include("navbar.php") ?>
+<br>
 
-				<?php include("includes/navbar.php"); ?>
-				<div class="container" style="height:100%">
+<div class="container" style="width:55%">
 <?php
-				if(isset($_GET['id'])){
-				     include "pressreleases/release" . $_GET['id'] . ".html";
-				}
-				else{
-				  include "pressreleases/release1.html";
-				}
+   if(isset($_GET['id'])){
+     include "pressreleases/release" .  $_GET['id'] . ".html";
+   }
+   else{
+     include "pressreleases/release1.html";
+   }
 ?>
-            <div class="fb-comments" data-href="http://catalyst4success.org/" data-width="470" data-num-posts="10"></div>
-				</div>
-			<?php include("includes/footer.php"); ?>
-<script>
-$(document).ready(function(){
-    changeCommentsUrl();
-});
-function getFullUrl(){
-    return document.URL;
-}
-function changeCommentsUrl(){
-    $(".fb-comments").attr('data-href',getFullUrl());
-}
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<?php include("footer.php") ?>
+
+
+$(document).ready( function(){
+        var welctop = $("#welcome").offset().top;
+        var welcbottom = welctop + $("#welcome").height();
+        $(window).scroll(function(){
+            var top = $(window).scrollTop();
+            var bottom = top + $(window).height();
+            if(top > welcbottom || $(window).width() < 767){
+            $("#navbar").prop('class', 'navbar navbar-default navbar-fixed-top');
+            }
+            else{
+            $("#navbar").prop('class', 'navbar navbar-default');
+            }
+            });
+        });
 </script>
-		</html>
+<script>
+function goToByScroll(id){
+    // Scroll
+    $('html,body').animate({
+scrollTop: $("#"+id).offset().top},
+'slow');
+    // Scroll
+}
+
+</script>
+
+<script>
+var width = $(window).width();
+var hoverover;
+$(document).ready( function(){
+
+        navbarCollapseCheck();
+        $(".hover-active-dropdown").hover(
+            function() { $(this).attr("class", "dropdown hover-active-dropdown active")},
+            function() { $(this).attr("class", "dropdown hover-active-dropdown")}
+            );
+
+        $(".hover-active").hover(
+            function() { $(this).attr("class", "hover-active active")},
+            function() { $(this).attr("class", "hover-active")}
+            );
+        });
+
+function navbarCollapseCheck(){
+    var width = $(window).width();
+    if(width < 767){
+        $(".dropdown-toggle").attr("data-toggle", "dropdown"); 
+        $("#navbar").prop('class', 'navbar navbar-default navbar-fixed-top');
+    }
+    else{
+        $(".dropdown-toggle").attr("data-toggle", " "); 
+        $("#navbar").prop('class', 'navbar navbar-default');
+    }
+}
+
+
+$(window).on('resize', function() {
+        navbarCollapseCheck();
+        });
+
+</script>
+
+</body></html>
