@@ -18,17 +18,17 @@
 <br>
 
 <div class="container" style="width:55%">
-<h1>Previous Facts of the Day</h1>
+<h1>Previous Facts of the Week</h1>
             <hr>
             <p> <?php
    $old_facts_file = 'files/oldfacts.txt';
 echo file_get_contents($old_facts_file);
-?><
+?>
 </div>
 <br><br><br><br><br>
 <?php include("footer.php") ?>
 
-
+<script>
 $(document).ready( function(){
         var welctop = $("#welcome").offset().top;
         var welcbottom = welctop + $("#welcome").height();

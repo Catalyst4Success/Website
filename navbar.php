@@ -40,7 +40,7 @@ $page = $_SERVER['REQUEST_URI'];
                         </li>
                     </ul>
 
-                    <li class="dropdown <?php if($page == '/signup.php') echo 'active'; else echo 'hover-active-dropwdown';?>">
+                    <li class="dropdown <?php if($page == '/signup.php') echo 'active'; else echo 'hover-active-dropdown';?>">
                     <a class="dropdown-toggle" href="signup.php">
                         <i class="fa fa-envelope"></i> CONTACT US</a>
                     <ul class="dropdown-menu">

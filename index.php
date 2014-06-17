@@ -39,7 +39,7 @@
             <h3 style="color:#FA8072">Since February 2013, we have...</h3>
             <ul>
                 <li>Performed for over 20,000 students from schools in the Poway, San Diego, Chula Vista, Del Mar, Jamul, and Oceanside Districts</li> 
-                <li>Conducted hands-on science labs with dozens of classrooms</li>
+                <li>Conducted hands-on science labs with hundreds of classrooms</li>
                 </p>
             </ul>
         </div>
@@ -92,30 +92,7 @@
                     <center><h1>Did you know...</h1></center>
                 </div>
                 <div class="col-md-6">
-                    <h4><?php
-                                $cache_file = 'files/cache.txt';
-                                $facts_file = 'files/facts.txt';
-                                $old_facts_file = 'files/oldfacts.txt';
-
-                                function read_and_delete_first_line($filename) {
-                                    $file = file($filename);
-                                    $output = $file[0];
-                                    unset($file[0]);
-                                    file_put_contents($filename, $file);
-                                    return $output;
-                                }
-
-                                if (file_exists($cache_file) && filemtime($cache_file) > time() - 86300) {
-                                    echo file_get_contents($cache_file);
-                                }
-
-                                else {
-                                    $content = read_and_delete_first_line($facts_file);
-                                    $today_content = file_get_contents($cache_file);
-                                    file_put_contents($old_facts_file, "\n" . "<br>" . $today_content, FILE_APPEND);
-                                    file_put_contents($cache_file, $content);
-                                    echo $content;
-                            } ?>
+                    <h4><?php include("fact.php") ?>
 </h4>
 <a href="facts.php"><center><button type="button" class="btn btn-danger">More Fun Facts</button></center></a>
 

@@ -15,4 +15,3 @@
 <script src="./Bootswatch  Default_files/jquery-1.10.2.min.js"></script>
         <script src="./Bootswatch  Default_files/bootstrap.min.js"></script>
         <script src="./Bootswatch  Default_files/bootswatch.js"></script>
-        <script>

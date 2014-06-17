@@ -37,7 +37,7 @@
 </div>
 <br>
    <?php include("footer.php") ?>
-
+<script>
 
 $(document).ready( function(){
         var welctop = $("#welcome").offset().top;

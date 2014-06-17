@@ -57,33 +57,6 @@
 <center>*Honorary member</center>
 
        <?php include("footer.php") ?>
-
-$(document).ready( function(){
-        var welctop = $("#welcome").offset().top;
-        var welcbottom = welctop + $("#welcome").height();
-        $(window).scroll(function(){
-            var top = $(window).scrollTop();
-            var bottom = top + $(window).height();
-            if(top > welcbottom || $(window).width() < 767){
-            $("#navbar").prop('class', 'navbar navbar-default navbar-fixed-top');
-            }
-            else{
-            $("#navbar").prop('class', 'navbar navbar-default');
-            }
-            });
-        });
-        </script>
-        <script>
-function goToByScroll(id){
-    // Scroll
-    $('html,body').animate({
-scrollTop: $("#"+id).offset().top},
-'slow');
-    // Scroll
-}
-
-        </script>
-
 <script>
 var width = $(window).width();
 var hoverover;
